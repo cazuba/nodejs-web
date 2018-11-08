@@ -1,3 +1,4 @@
+// server: http.Server
 const server = require("http").createServer();
 const PORT = process.env.PORT || 8000;
 
@@ -9,6 +10,8 @@ const PORT = process.env.PORT || 8000;
 
 // Hello World! V1.1 - Streaming
 server.on("request", (req, res) => {
+  // req: http.IncomingMessage
+  // res: http.Server
   res.writeHead(200, { "Content-Type": "text-plain" });
   // BASIC STREAMING HTTP SERVER using .write
   res.write("Hello\n");
